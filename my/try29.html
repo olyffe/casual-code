@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>eg29 form1</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+
+<body>
+<div class="container">
+	<form class="form-horizontal" role="form" style="padding-top: 200px;">	
+		<div class="form-group" >
+			<label for="name1" class="col-sm-2 control-label">名称</label>
+			<div class="col-sm-8">
+			<input type="text" class="form-control" id="name1" placeholder="必填，长度为4~16个字符">			
+			</div>
+			<button type="submit" class="btn btn-default col-sm-2">验证</button>
+		</div>
+		
+<!-- 		<div class="form-group" >
+			<label for="name1" class="col-sm-2 control-label">名称</label>
+			<div class="col-sm-8">
+			<input type="text" class="form-control" id="name2" placeholder="姓名不能为空">
+			</div>
+			<button type="submit" class="btn btn-default col-sm-2">验证</button>
+		</div>
+		<div class="form-group" >
+			<label for="name1" class="col-sm-2 control-label">名称</label>
+			<div class="col-sm-8">
+			<input type="text" class="form-control" id="name3" placeholder="名称格式正确">
+			</div>
+			<button type="submit" class="btn btn-default col-sm-2">验证</button>
+		</div> -->				
+	</form>
+</div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('button').click(function(){
+			var name1 = $('#name1').val();
+			var trans = name1.replace(/[\u4e00-\u9fa5]/g,"aa");
+			
+			if(!trans){
+				alert("姓名不能为空");
+			}else if(trans.length < 4 || trans.length > 16){
+				alert("必填，长度为4~16个字符");
+			}else{
+				alert("格式正确");
+			}
+		})
+		/* var mode = /(-?\d+)(\d{3})/;
+		while(mode.test(str))
+			str = str.replace(mode,"$1,$2"); */
+	})
+
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>IFE JavaScript Task 01</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>      
+        <script src="js/eg18.js"></script>
+    
+       <style>  
+/*         	.up{
+        		width: 1200px;
+        		height: 100px;
+        		margin: 50px auto;
+        		box-shadow:0 0 5px  #888888;
+        		border-radius: 5px;
+        		display: flex;
+        		flex-flow: row wrap;
+        		align-content: center;
+        		justify-content: space-between;
+        	}
+        	input{
+        		width: 150px;
+        		height: 30px;
+        		margin: 35px auto;
+        	} */
+            #container {
+                display: -webkit-flex; /* for webkit */
+                display: flex;
+                width: 500px;
+                height: 150px;
+                align-items: flex-end;
+            }
+        
+            #container div {
+                width: 5px;
+                display: inline-block;
+                font-size: 30px;
+                text-align: center;
+                padding: 0 15px;
+                margin: 2px 0;
+                margin-right: 10px;
+                height: 50px;
+                line-height: 50px;                
+                background-color: red;
+                color: #FFFFFF;
+            }
+        </style> 
+    </head>
+    
+    <body>
+	      <div class="page-header">
+	        <h1>BootStrap</h1>
+	      </div>
+	      <ul class="nav nav-tabs" role="tablist">
+	        <li role="presentation" ><a href="#">Home</a></li>
+	        <li role="presentation" class="active"><a href="#">Profile</a></li>
+	        <li role="presentation"><a href="#">Messages</a></li>
+	      </ul>    
+    	<div class="navbar-inner">
+	        <input id="num-input" type="text">
+	        <input class="btn btn-navbar" type="button" value="左侧入">
+	        <input class="btn btn-navbar" type="button" value="右侧入">
+	        <input class="btn btn-navbar" type="button" value="左侧出">
+	        <input class="btn btn-navbar" type="button" value="右侧出">
+	        <input class="btn btn-navbar" type="button" value="对当前元素排序">
+        </div>
+        <div id="container">
+
+        </div>
+    </body>
+</html> 

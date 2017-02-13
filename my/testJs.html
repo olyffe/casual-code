@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test js/jQuery</title>
+</head>
+<body>
+<div>
+</div>
+</body>
+<script src="js/jquery.js"></script>
+<script>
+(function(){
+	var arr = [3,-12,1,5,3,54,22,17];
+    //冒泡
+    function bbsort(arry) {
+        var len = arry.length;
+        for(var i = 0; i<len-1; i++){
+            for(var j = 0; j<len-i-1; j++){
+                if(arry[j]>=arry[j+1]){
+                    var temp;
+                    temp = arry[j];
+                    arry[j] = arry[j+1];
+                    arry[j+1] = temp;
+                }
+            }
+        }
+    }
+
+	//直接插入排序
+	  function insertSort(arry){
+		var len = arry.length;
+		for(var i = 1; i < len; i++){
+			var key = arry[i];
+			for(var j = i-1; j>=0; j--){
+				if(arry[j]>key){
+					arry[j+1] = arry[j];
+				}else{
+					break;
+				}
+			}
+			arry[j+1] = key;
+		}
+	} 	
+	//直接插入排序
+	  function binarySort(arry){
+			var len = arry.length;
+			for(var i = 1; i < len; i++){
+				var low = 0;
+				var high = i - 1;
+				
+				var key = arry[i];
+	 			while(high>=low){
+	 			var mid = Math.floor((low + high)/2);
+					if(arry[mid]>key){
+						high = mid-1;
+					}
+					else{
+						low = mid +1;
+					}
+				}
+				
+	 			for(var j = i; j>high+1; j--){
+					arry[j] = arry[j-1];
+				}
+				arry[high+1] = key;
+			}
+	} 
+	
+	//折半插入排序 	 
+ 
+	//insertSort(arr);
+    bbsort(arr);
+	console.log(arr);
+})()
+
+</script>
+</html>

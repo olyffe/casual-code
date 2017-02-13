@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+</head>
+<body>
+    <div>
+        <div>
+            <span id="show"></span>
+        </div>
+        <div>
+            <button type="button" onclick="returnVal(1)">ok</button>
+            <button type="button" onclick="returnVal(0)">cancel</button>
+        </div>
+    </div>
+</body>
+<script src="js/jquery.js"></script>
+<script>
+    $(function () {
+        var show = window.dialogArguments;
+        $('#show').text(show);
+    });
+    function returnVal(val) {
+        window.returnValue = val;
+        window.close();
+    }
+</script>
+</html>

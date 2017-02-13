@@ -1,0 +1,48 @@
+body{
+	background: #eee;
+	padding: 20px;
+	font-family: "Î¢ÈíÑÅºÚ";
+}
+.main_div{
+	padding: 20px;
+	border: 1px solid #000000;
+	margin: 0  auto;
+	
+}
+.left{
+	padding: 20px;
+	border: 1px solid #000000;
+	background: #FFFFFF;
+	width: 200px; 
+	float: left;
+}
+.name{
+  width: 200px;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+}
+.img{
+	height: 80px;
+	width: 80px;
+	float: left;
+}
+.right{
+	padding: 20px;
+	border: 1px solid #000000;
+	background: #FFFFFF;
+	width: 120px;
+	float: right;
+}
+.img1{
+	height: 80px;
+	width: 80px;
+	float: left:	
+	
+}
+.mid{
+	padding: 20px;
+	border: 1px solid #000000;
+	background: #FFFFFF;	
+	
+}

@@ -1,0 +1,73 @@
+html,body{
+	margin: 0;
+	padding: 0;
+}
+        html{
+            height: 100%;
+        }
+body{
+	height: 100%;
+	display: flex;
+	flex-flow: column wrap;
+	background: url('../img/mooning.png') repeat scroll 0 0 #E5E5E5;
+}
+
+.navbar-wrapper{position: absolute; top: 0; left: 0; right: 0; z-index: 10; margin-top: 20px; margin-bottom: -90px;}
+
+.carousel{margin: 0 auto;}
+.carousel .container{position: relative; z-index: 9;}
+.carousel .item{height: 500px;}
+.carousel img{
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	min-width: 100%; 
+	min-height: 100%;
+	height: 500px;
+}
+.carousel-caption{background-color: transparent; position: static; max-width: 550px; padding: 0 20px; margin-top: 200px;}
+.carousel-caption h1{margin: 0; line-height: 1.25; color: #fff; text-shadow: 0 1px 1px rgba(0,0,0,.4);}
+.carousel-caption .btn{margin-top: 30px;}
+
+ @media (min-width: 769px) {
+.forFlex{
+	flex: 1 0 auto;
+}	
+.container-login{
+	width:300px; 
+	height:400px;
+	position: absolute; 
+	right:10%; 
+	top:150px; 
+	z-index:99
+}				
+}
+@media (max-width: 769px) {
+.forFlex{
+	flex: 1 0 auto;
+	display: flex;
+	flex-wrap: wrap; 
+}	
+.carousel{
+	flex: 1 0 100%;
+}
+.container-login{
+	flex: 0 0 auto;
+	width:300px; 
+	height:400px;
+	right:100px; 
+	top:150px; 
+	z-index:99
+}				
+} 
+
+
+footer{
+	flex: 0 0 auto;
+	width: 80%;
+	height: 50px;
+	background-color: #eee;
+	margin: 0 auto;
+	border-radius: 10%;
+	border-shadow: 0 0 15px #eee;
+}

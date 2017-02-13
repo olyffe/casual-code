@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html> 
+<head>  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+  <title>模拟alert和confirm提示框</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>  
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <ul class="nav nav-tabs">
+                <li  class="active"><a href="#">tab1</a></li>
+                <li ><a href="#">tab2</a></li>
+                <li ><a href="#">tab3</a></li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"             role="button" aria-haspopup="true" aria-expanded="false">tab4<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="##">drop1</a></li>
+                        <li><a href="##">drop2</a></li>
+                        <li><a href="##">drop3</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="containCheckbox">
+            <span><input type="checkbox" id="ck1"></span>
+            <span><input type="checkbox" id="ck2"></span>
+            <span><input type="checkbox" id="ck3"></span>
+            <span><input type="checkbox" id="ck4"></span>
+        </div>
+        <div>
+            <select id="sel">
+                <option value="">please select one option</option>
+                <option value="0">op0</option>
+                <option value="1" selected>hehehee</option>
+                <option value="2">op2</option>
+                <option value="3">op3</option>
+            </select>
+        </div>
+        <button id="bt1" type="button" class="btn btn-primary">switch select and text</button>
+    </div>
+
+
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript">
+    $(function () {
+        var boxList =  $('#outer input');
+        var i = 0;
+        var forToggleClick = 0;
+        boxList.each(function () {
+            $(this).click(function () {
+                $(this).val(i++);
+                console.log($(this).val());
+            });
+        });
+        console.log($('#sel option').children.length);
+        if($('#sel option').size()>1){
+            $('#sel').before('<span>' + $('#sel').find("option:selected").text() +'</span>').hide();
+        }
+        $('#bt1').click(function (){
+            if( forToggleClick++ %2 == 0){
+                $('#outer').show();
+            }else {
+                $('#outer').hide();
+            }
+        });
+
+//        for(var i = 0; i<boxList.length; i++){
+//            //boxList[i].checked = 'checked';
+//            //boxList[i].prop("checked");
+//            if(!boxList[i].checked){
+//                console.log(typeof $('#ck1'));
+//                console.log(typeof boxList[i]);
+//                boxList[i].checked = true;
+//            }
+//            //$("#cb1").attr("checked","checked");
+//        }
+    });
+
+
+</script>
+</body>  
+</html>  
