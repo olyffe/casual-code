@@ -100,7 +100,7 @@ var createTag = (function() {
         case 'keyEvent':
         document.addEventListener('keyup',function(event) {
           if (/(,| |\，)$/.test(self.input.value) || event.keyCode===13) {
-            console.log(self.getData())
+            //console.log(self.getData());
             self.repeatData(self.getData().trim()) || self.render(self.getData().trim());
             self.input.value = '';
             if (self.getNumber() > 10) {
@@ -121,8 +121,9 @@ var createTag = (function() {
         });
         break;
       }
-    }
-  };
+    }//init
+  };//prototype
+
   // 返回类
   return _tag;
 })();

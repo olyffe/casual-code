@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>testajax</title>
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+        }
+        header,footer{
+            width: 100%;
+            height: 20px;
+            background-color: #fff;
+            flex: 0 1 auto;
+        }
+        .news {
+            flex: 1 1 auto;
+            width: 100%;
+            background-color: #FFFFFF;
+            border: solid 1px black;
+        }
+        .news span{
+            height: 20px;
+            width: 100px;
+            background-color: lightgray;
+        }
+        .news input{
+            height: 30px;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+<header></header>
+<div class="news">
+    <input type="text" placeholder="input sth">
+    <ul>
+        <li><span>li1</span></li>
+        <li><span>li2</span></li>
+        <li><span>li3</span></li>
+    </ul>
+    <button type="button">add li</button>
+</div>
+<footer></footer>
+</body>
+<script src="js/jquery.js"></script>
+<script>
+    $(function () {
+        $(document).on('click','ul li',function () {
+            $('input').val('');
+            $('input').val($(this).text());
+        });
+
+        $('button').on('click',function () {
+            var len = $('ul li').length;
+            var hehe = len+1;
+            $('ul').append('<li><span>li'+ hehe +'</span></li>');
+        });
+    });
+</script>
+</html>

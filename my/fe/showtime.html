@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>showtime</title>
+    <style>
+        #show{
+            width: 150px;
+            height: 30px;
+            border: 1px solid ;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" id="show"/>
+    </div>
+</body>
+<script src="../js/jquery.js"></script>
+<script>
+    (function () {
+        var time = new Date();
+        $('#show').val(time);
+    })();
+</script>
+</html>

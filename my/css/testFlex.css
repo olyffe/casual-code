@@ -101,6 +101,7 @@ body {
 	justify-content: center;
 }
 .seven-face .column:nth-child(3){
+    border: 1px solid blue;
 	justify-content: space-between;
 }
 
