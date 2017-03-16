@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>unique</title>
+</head>
+<body>
+<div>
+</div>
+</body>
+<script src="../js/jquery.js"></script>
+<script>
+
+    var arr = [3,-12,1,99,22,5,3,54,22,17];
+    //indexof
+    function unique1(arry) {
+        var len = arry.length;
+        if(len<=1){return arry;}
+        var res = [];
+        for(var i = 0; i<len; i++){
+            if(res.indexOf(arry[i]) === -1){
+                res.push(arry[i]);
+            }
+        }
+        return res;
+    }
+    //write indexof
+    function unique2(arry) {
+        var len = arry.length;
+        if(len<=1){return arry;}
+
+        var indexOf = [].indexOf() ?
+                function (ar,item) {
+                    return ar.indexOf(item);
+                } :
+                function (ar,item) {
+                    for(var i = 0; i < ar.length; i++){
+                        if(ar[i] === item){
+                            return i;
+                        }
+                    }
+                    return -1;
+                };
+        var res = [];
+        for(var j = 0; j<len; j++){
+            if(indexOf(res,arry[j]) === -1){
+                res.push(arry[j]);
+            }
+        }
+        return res;
+    }
+
+    //final hash table
+    function unique3(arry) {
+        var res = [];
+        var hash = {};
+        for(var i = 0; i<arry.length; i++){
+            if(!hash[arry[i]]){
+                hash[arry[i]] = true;
+                res.push(arry[i]);
+            }
+        }
+        return res;
+    }
+    var hehe = unique3(arr);
+    console.log(hehe);
+
+</script>
+</html>

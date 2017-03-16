@@ -4,23 +4,50 @@
     <meta charset="UTF-8">
     <title>showtime</title>
     <style>
-        #show{
-            width: 150px;
-            height: 30px;
-            border: 1px solid ;
+        html,body{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
         }
+        .out{
+            width: 100%;
+            height: 100%;
+            background-color: #9acfea;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #format{
+            text-align: center;
+            line-height: 300px;
+            font-size: 30px;
+            width: 600px;
+            height: 300px;
+            border: 3px solid floralwhite;
+            border-radius: 15%;
+        }
+
     </style>
 </head>
 <body>
-    <div>
-        <input type="text" id="show"/>
+    <div class="out">
+        <span id="format"></span>
     </div>
 </body>
 <script src="../js/jquery.js"></script>
 <script>
     (function () {
-        var time = new Date();
-        $('#show').val(time);
+        setInterval(function () {
+            var time = new Date();
+            var year = time.getFullYear();
+            var month = time.getMonth();
+            var day = time.getDate();
+            var weekday = time.getDay();
+            var _time = time.toLocaleTimeString();
+            var a = ['日','一','二','三','四','五','六'];
+            $('#format').text(year + '年' + (month+1) + '月' + day + '日' + '星期' + a[weekday] + _time);
+        },1000)
     })();
 </script>
 </html>

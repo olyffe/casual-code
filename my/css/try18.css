@@ -1,0 +1,38 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+.cond{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 300px;
+    margin: auto 20%;
+}
+.cond button:nth-child(2){
+    margin-left: 30px;
+}
+.cond button:nth-child(4){
+    margin-left: 30px;
+}
+#num-input{
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+}
+#container{
+    margin-left: 20%;
+    margin-right: 30%;
+    display: flex;
+    justify-content: space-around;
+}
+.inDiv{
+    width: 30px;
+    background-color: red;
+    font-size: 20px;
+    text-align: center;
+    align-self: flex-end;
+}

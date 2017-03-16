@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transitionAndanimation</title>
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        .out{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background-color: gray;
+        }
+        .mid{
+            width: 300px;
+            height: 300px;
+            background-color: yellow;
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 300px;
+            transition: border 2s ease-in-out .2s;
+        }
+        .mid:active {
+            border: 5px solid blue;
+        }/*active 当鼠标按下且没有释放时*/
+        .mid:hover {
+            border: 5px solid blue;
+        }
+        input:focus{
+            background-color: blue;
+        }
+        .bot{
+            width: 300px;
+            height: 300px;
+            box-sizing: border-box;
+            background-color: #FFFFFF;
+            animation: rainbow 3s infinite;
+        }
+        /*.bot:hover{
+            animation: rainbow 3s infinite;
+        }*/
+        @keyframes rainbow {
+            0% { transform: none; background: #c00; border-radius: 0%}
+            50% { transform: scale(1.2) rotate(90deg) translateY(-25px); background: orange; border-radius: 50%}
+            100% { transform: none; background: yellowgreen; border-radius: 0%}
+        }
+    </style>
+</head>
+<body>
+<div class="out">
+    <div class="mid">
+        <input type="text">
+    </div>
+    <div class="bot"></div>
+</div>
+</body>
+</html>

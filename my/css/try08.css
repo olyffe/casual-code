@@ -4,15 +4,15 @@
 }
 .main{
 	width: 100%;
-	overflow: auto;	
-    box-sizing: border-box;	
+	overflow: auto;
+    box-sizing: border-box;
     padding: 10px;
     border: 1px solid #999;
 }
 .main:before{
 	clear: both;
 	content: "";
-	display: table;	
+	display: table;
 }
 .main:after{
 	clear: both;

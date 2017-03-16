@@ -100,44 +100,6 @@ window.onload = function() {
         }
     }
     
-    /*function sleep(milliseconds) {
-        var start = new Date().getTime();
-        for (var i = 0; i < 1e7; i++) {
-            if ((new Date().getTime() - start) > milliseconds){
-                break;
-            }
-        }
-    }*/
-    
-    //sorting function;
-    /*function QuickSort(left, right) {
-        if(left >= right) return;
-        var i = left, j = right;
-        var temp = queue.str[i];
-        //using Hoare partition scheme
-        i--;    
-        j++;
-        while(1){
-            do{
-                i++;
-            }while(queue.str[i] < temp);
-            do{
-                j--;
-            }while(queue.str[j] > temp);
-            if(i >= j) break;
-            var tempInt = queue.str[i];
-            queue.str[i] = queue.str[j];
-            queue.str[j] = tempInt;
-            queue.paint();
-            sleep(50);
-        }
-        //apply quicksort recursively
-        QuickSort(left, j);
-        sleep(50);
-        QuickSort(j + 1, right);
-        sleep(50);
-    }*/
-    
     //turn to bubblesort
     function BubbleSort() {
         var Clock;

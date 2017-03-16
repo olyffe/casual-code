@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首字母大写</title>
+</head>
+<body>
+
+</body>
+<script>
+    //首字母大写
+    function titleCase(str) {
+        var array = str.trim().toLowerCase().split(/[\s]+/);
+        for (var i = 0; i < array.length; i++){
+            array[i] = array[i][0].toUpperCase() + array[i].substring(1, array[i].length);
+        }
+        var string = array.join(" ");
+        return string;
+    }
+    //反转字符串
+    function revert(str) {
+        var array = [];
+        var temp;
+        while(str.length>0){
+            temp = str.substr(str.length-1,1);
+            str = str.substr(0,str.length-1);
+            array.push(temp);
+        }
+        var rev = array.join("");
+        return rev;
+    }
+    console.log(revert("hehe"));
+    //console.log(titleCase("    I'm a     little tea pot"));
+</script>
+</html>

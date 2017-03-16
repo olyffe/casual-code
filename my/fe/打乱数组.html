@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>打乱数组</title>
+</head>
+<body>
+
+</body>
+<script>
+    var a = [];
+    for(var i = 0; i<10; i++){
+        a.push(i);
+    }
+    //方法1
+    var b = a.sort(function () {
+        return 0.5 - Math.random();
+    });
+    //方法2
+    function randomDisturb(array) {
+        var len = array.length;
+        var randomInedx;
+        var temp;
+        while (len>0){
+            randomInedx = Math.floor(Math.random() * len);
+            temp = array[len-1];
+            array[len-1] = array[randomInedx];
+            array[randomInedx] = temp;
+            len--;
+        }
+        return array;
+    }
+    var c = randomDisturb(a);
+    console.log(c)
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>quickSort</title>
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="out">
+    <div class="top"></div>
+    <div class="mid"></div>
+</div>
+</body>
+<script src="../js/jquery.js"></script>
+<script>
+    var urlparse = 'https://www.baidu.com/s?wd=js%20url%E8%A7%A3%E6%9E%90json&rsv_spt=1&rsv_iqid=0xc8fe642f0008de9f&issp=1&f=8&rsv_bp=0&rsv_idx=2&ie=utf-8&tn=baiduhome_pg&rsv_enter=1&rsv_sug3=21&rsv_sug1=15&rsv_sug7=100&rsv_t=149acUfNCxkLUpBC1YnwDQqfUT1fyD%2BW3eLnuP%2BDh5zb8uibcrEWz4MgEJnlJR2uvPAV&sug=js%2520url%25E8%25A7%25A3%25E6%259E%2590json&rsv_n=1';
+    function GetRequest(url) {
+
+        //var url = location.search; //获取url中"?"符后的字串
+        var theRequest = new Object();
+        if (url.indexOf("?") != -1) {
+            //var str = url.split('?')[1];
+            var str = url.substr(url.indexOf("?") + 1);
+            var strs = str.split("&");
+            for(var i = 0; i<strs.length; i++){
+                theRequest[strs[i].split('=')[0]] = (strs[i].split('=')[1]);
+            }
+        }
+        return theRequest;
+    }
+
+    var res = GetRequest(urlparse);
+    console.log(res);
+    console.log(res.__proto__.__proto__)
+</script>
+</html>

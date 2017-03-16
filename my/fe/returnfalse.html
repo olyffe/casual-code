@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>冒泡</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div class="post">
+    <h2><a href="http://jb51.net">My Page</a></h2>
+    <div class="content">
+        Teaser text...
+    </div>
+</div>
+<div class="post">
+    <h2><a href="http://jb51.net">My Other Page</a></h2>
+    <div class="content">
+        Teaser text...
+    </div>
+</div>
+<script src="../js/jquery.js"></script>
+<script>
+    $(function () {
+        $("div.post h2 a").click(function (e) {
+            var a = $(this),
+            href = a.attr('href'), // Let jQuery normalize `href`,
+            content  = a.parent().next();
+            content.load(href + " #content");
+            e.stopPropagation();
+            e.preventDefault();
+            //return false;
+        });
+        $("div.post").click(function () {
+            console.log('hehe');
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>maxsubarry</title>
+</head>
+<body>
+<div>
+</div>
+</body>
+<script src="../js/jquery.js"></script>
+<script>
+
+    var arr = [-2,11,-4,13,-5,-2];
+
+
+    //自己写的。。两个for
+    function max(arry) {
+        var hash = {};
+        var max = arry[0];
+        for(var i = 0; i< arry.length; i++){
+            var tmp = arry[i];
+            for(var j = i+1; j< arry.length; j++){
+                tmp += arry[j];
+                if(tmp > max){
+                    max = tmp;
+                    hash['low'] = arry[i];
+                    hash['high'] = arry[j];
+                }
+            }
+        }
+        return hash;
+    }
+
+    //累计遍历
+    function sum(arry) {
+        var sum = arry[0];
+        var temp = arry[0];
+        var hash = {'low':0,'high':0};
+        for(var i = 1; i<arry.length; i++){
+            if(temp<0){
+                temp = arry[i];
+                hash['low'] = i;
+            }else {
+                temp = temp+arry[i];
+            }
+            if(temp>sum){
+                sum = temp;
+                hash['high'] = i;
+            }
+        }
+        return hash;
+    }
+    var hehe = sum(arr);
+    //console.log(hehe);
+    console.log(hehe['low'] + '----' + hehe['high']);
+
+</script>
+</html>

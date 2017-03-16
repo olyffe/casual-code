@@ -1,7 +1,4 @@
-window.alert = function (msg) {
-	var iframe=document.createElement("iframe");
-	iframe.src="javascript:void(0);"
-	document.body.appendChild(iframe)
+window.alert = function (msg,callback) {
 
 	var _html = "";
 
@@ -10,12 +7,12 @@ window.alert = function (msg) {
     _html += '<input id="mb_btn_ok" type="button" value="确定" />';
     _html += '</div></div>'; 
     //必须先将_html添加到body，再设置Css样式  
-    $("iframe").append(_html);
+    $("body").append(_html);
     GenerateCss();
-		//iframe.contentWindow.alert(msg);
-    $("#mb_btn_ok").click( function() {  
-        $("body").remove(iframe);
-    });  
+    $("#mb_btn_ok").click( function() {
+	    $("#mb_box,#mb_con").remove();
+	    callback();
+    });
     $("#mb_btn_ok").focus().keypress( function(e) {  
         if( e.keyCode == 13 || e.keyCode == 27 ) $("#mb_btn_ok").trigger('click');  
     });     

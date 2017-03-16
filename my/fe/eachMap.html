@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>showtime</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+    </style>
+</head>
+<body>
+</body>
+<script src="../js/jquery.js"></script>
+<script>
+    (function () {
+        var arr = [12,23,24,42,1];
+        //本来each forEach是不改变数组的值的，但是可以通过index改变
+        $.each(arr, function (index,item) {
+            arr[index] = item*10;
+        });
+        console.log(arr);//120,230...
+        var res = arr.forEach(function (item,index,input) {
+            //return item*10;
+            input[index] = item*10;
+        });
+        var resmap = arr.map(function (item,index,input) {
+            return item*10;
+        })
+        console.log(res);//undefined
+        console.log(arr);//1200,2300...
+        console.log(resmap);//12000,23000...
+    })();
+</script>
+</html>

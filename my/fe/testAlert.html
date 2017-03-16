@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>模拟alert和confirm提示框</title>
+</head>
+<body>
+<input id="add" type="button" value="添加" />
+<input id="update" type="button" value="修改" />
+
+<script src="../js/jquery.js"></script>
+<script src="../js/testAlert.js"></script>
+<script type="text/javascript">
+
+    $("#add").on("click", function () {
+        zdalert('系统提示','请输入正确数值',function(){
+            console.log('回调')
+            //要回调的方法
+            //window.location.href="http://www.baidu.com"});
+    });
+
+    //也可以传方法名 test
+    $("#update").on("click", function () {
+        zdconfirm('系统确认框','你确认提交该条数据吗',function(r){
+            if(r)
+            {
+                window.location.href="http://www.baidu.com"
+            }
+        });
+
+
+    });
+
+
+</script>
+</body>
+</html>

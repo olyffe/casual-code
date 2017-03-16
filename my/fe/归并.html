@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>归并</title>
+</head>
+<body>
+</body>
+<script src="../js/jquery.js"></script>
+<script>
+    var arry = [72,6,57,88,60,42,83,73,48,85];
+
+    function merge(left,right) {
+        var res = [];
+        while (left.length>0 && right.length>0){
+            if(left[0]<right[0]){
+                res.push(left.shift());
+            }else {
+                res.push(right.shift());
+            }
+        }
+        return res.concat(left).concat(right);
+    }
+    function mergeSort(arr) {
+        if(arr.length == 1){
+            return arr;
+        }
+        var arrL = arr.slice(0,Math.floor(arr.length/2));
+        var arrR = arr.slice(Math.floor(arr.length/2));
+
+        return merge(mergeSort(arrL), mergeSort(arrR));
+    }
+    var resul = mergeSort(arry);
+    console.log(resul);
+
+    //有点low
+/*      var arrysort1 = [1,5,7];
+     var arrysort2 = [2,4,6,9,10];
+     var arrymerge = [];  
+    function mergesort(arry1,arry2,mergesort) {
+        var len1 = arry1.length;
+        var len2 = arry2.length;
+        var index1 = index2 = indexm = 0;
+        while(index1<len1 && index2<len2){
+            if(arry1[index1]<arry2[index2]){
+                mergesort[indexm++] = arry1[index1++];
+            }else {
+                mergesort[indexm++] = arry2[index2++];
+            }
+        }
+        while(index1<len1){
+            mergesort[indexm++] = arry1[index1++];
+        }
+        while(index2<len2){
+            mergesort[indexm++] = arry2[index2++];
+        }
+        return mergesort;
+    }*/
+
+</script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul id="hehe1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>12</li>
+        <li>13</li>
+        <li>11</li>
+    </ul>
+    <input type="button" id="btn" value="clickme"/>
+</body>
+<script src="../js/jquery.js"></script>
+<script>
+
+    //var ul1 = document.getElementsByTagName("ul");
+    var ul1 = document.getElementById("hehe1");
+    ul1.addEventListener('click',function(e){
+        var event = e ? e : window.event;
+        var target = event.target || event.srcElement;
+        var that = this.currentTarget;
+        if(target.nodeName.toLowerCase() == 'li'){
+            alert('hehe');
+        }
+    },false);
+/*    $('ul').on('click','li',function (e) {
+        var that = $(e)[0];//e
+        var target = that.target || that.srcElement;
+        if(target.nodeName.toLowerCase() == 'li') {
+            alert('hehe');
+        }
+    });*/
+    var btn = document.getElementById('btn');
+    btn.addEventListener('click',test,false);
+    function test(e) {
+        var that = e ? e : window.event;
+        var target = that.target || that.srcElement;
+        if(target && target.nodeName.toLowerCase() == 'input'){
+            alert('input');
+        }
+    }
+
+</script>
+</html>

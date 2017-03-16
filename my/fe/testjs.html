@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Foo() {
+        getName = function () { alert (1); };
+        return this;
+    }
+    Foo.getName = function () { alert (2);};
+    Foo.prototype.getName = function () { alert (3);};
+    var getName = function () { alert (4);};
+    function getName() { alert (5);}
+
+    //请写出以下输出结果：
+    Foo.getName(); //2
+    getName(); //4 变量提升4的声明和5提到最上面，最下面是4的运行
+    Foo().getName(); //1 向Foo函数外寻找getName定义，找到并覆盖，然后return this，this指向window对象
+    getName(); //4   wrong 正确答案是1，因为调用3Foo函数修改了getName并返回this指向window对象，所以输出1
+    new Foo.getName(); //优先级，.的优先级大于new，详单于new (Foo.getName)(),所以输出2
+    new Foo().getName();//优先级（）大于new，所以等于(new Foo()).getName();原题中，返回的是this，
+    // 而this在构造函数中本来就代表当前实例化对象，遂最终Foo函数返回实例化对象。之后调用实例化对象的getName函数，
+    // 因为在Foo构造函数中没有为实例化对象添加任何属性，遂到当前对象的原型对象（prototype）中寻找getName，找到了。
+    //所以输出3
+    new new Foo().getName();//同上 3
+
+    //正确答案 2 4 1 1
+</script>
+</body>
+</html>
